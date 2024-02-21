@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
+                appBarTheme: AppBarTheme(
+                  backgroundColor: getThemeColor(BlocProvider.of<GetWeatherCubit>(context).weatherModel?.condition),
+                ),
                 primarySwatch: getThemeColor(BlocProvider.of<GetWeatherCubit>(context).weatherModel?.condition),
               ),
               home: const HomeScreen(),
